@@ -31,6 +31,11 @@ const ONLY_MAHASISWA = ['ADMIN', 'MAHASISWA']
 const ONLY_DOSEN = ['ADMIN', 'DOSEN']
 const ONLY_ALUMNI = ['ADMIN', 'ALUMNI']
 
+app.get('/cookie', (req, res) => {
+    res.cookie('testerslicecookie', "somecookie", { maxAge: MAX_AGE_COOKIE, httpOnly: true , sameSite: 'none', secure: true});
+    res.json({ "ok": 'Hello World! Cookie' })
+})
+
 app.post('/login/:role', survei.login)
 
 app.get('/dosen/suggest', middleware(ONLY_ADMIN), survei.getDosenWithSuggest) // get dosen with suggest ?query=
