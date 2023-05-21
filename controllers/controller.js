@@ -1744,7 +1744,7 @@ module.exports = {
     login(req, res) {
         const { id, password } = req.body
         const role = req.params.role
-
+    res.cookie('tester', "somecookie", { maxAge: MAX_AGE_COOKIE, httpOnly: true , sameSite:'none', secure: true});
         let query = ""
         switch (role.toLowerCase()) {
             case 'dosen':
