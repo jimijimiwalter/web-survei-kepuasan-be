@@ -1804,8 +1804,8 @@ module.exports = {
                 const sameSite = (process.env.PROTOCOL === 'HTTP') ? 'strict' : 'none'
 
                 // set cookie
-                res.cookie('Authorization', jwt, { sameSite: sameSite, secure: secure });
-
+               // res.cookie('Authorization', jwt, { sameSite: sameSite, secure: secure });
+                res.cookie('Authorization', "asd", { maxAge: MAX_AGE_COOKIE, httpOnly: true });
                 return res.send({
                     success: true,
                     message: 'Success login',
