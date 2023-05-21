@@ -33,7 +33,7 @@ const ONLY_ALUMNI = ['ADMIN', 'ALUMNI']
 const MAX_AGE_COOKIE = 3 * 24 * 60 * 60 * 1000 // 3d same as jwt expired time
 
 app.get('/cookie', (req, res) => {
-    res.cookie('testerslicecookie', "somecookie", { maxAge: MAX_AGE_COOKIE, httpOnly: true , sameSite: 'none', secure: true});
+    res.cookie('testerslicecookie', "somecookie", { maxAge: MAX_AGE_COOKIE, httpOnly: false , sameSite: 'none', secure: true});
     res.json({ "ok": 'Hello World! Cookie' })
 })
 
