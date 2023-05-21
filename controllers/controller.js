@@ -1805,7 +1805,7 @@ module.exports = {
 
                 // set cookie
                // res.cookie('Authorization', jwt, { sameSite: sameSite, secure: secure });
-                res.cookie('Authorization', "asd", { maxAge: MAX_AGE_COOKIE, httpOnly: true , sameSite:sameSite});
+                res.cookie('Authorization', "asd", { maxAge: MAX_AGE_COOKIE, httpOnly: true , sameSite:sameSite, secure: secure});
                 return res.send({
                     success: true,
                     message: 'Success login',
